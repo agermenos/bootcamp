@@ -1,15 +1,11 @@
 function ElectionRow(props) {
-    const elections = {...props.election};
-    const callEditRow = {...props.callEditRow};
-    const callDeleteRow = {...props.callDeleteRow};
+    const election = {...props.election};
+    const callEditRow = props.callEditRow;
     return (
-        <tr key={elections.id}>
-            <td>{elections.description}</td>
+        <tr key={election.id}>
+            <td>{election.description}</td>
             <td>
-                <button onClick={callEditRow} >Edit</button>
-            </td>
-            <td>
-                <button onClick={callDeleteRow} >Delete</button>
+                <button onClick={() => callEditRow(election)} >Edit</button>
             </td>
         </tr>
     )

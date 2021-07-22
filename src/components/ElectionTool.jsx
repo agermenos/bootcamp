@@ -1,5 +1,6 @@
 import HeadersTool from "./HeadersTool";
 import { useState, useEffect } from "react";
+import ElectionForm from './ElectionForm';
 import ElectionTableHeader from './ElectionTableHeader';
 import ElectionRow from "./ElectionRow";
 import axios from 'axios';
@@ -7,6 +8,7 @@ import axios from 'axios';
 function ElectionTool(props){
     const [error, setError] = useState("");
     const [electionsData, setElectionsData] = useState([]);
+    const [selectedElection, setSelectedElection] = useState({});
     const ELECTIONS_URL = "http://localhost:3010/electionsData";
 
     useEffect (
@@ -18,8 +20,13 @@ function ElectionTool(props){
         []    
     );
 
+    const callEditRow = (election) => {
+        console.log('Editing Election ' + election.id);
+        setSelectedElection(election);
+    };
+
     const electionRows=electionsData.map(election => {
-        return <ElectionRow election={election}/>
+        return <ElectionRow election={election} callEditRow={callEditRow}/>
     });
     
     return(
@@ -32,8 +39,10 @@ function ElectionTool(props){
                     {electionRows}
                 </tbody>
             </table>
-            {/* <ElectionForm  callBackMethod={updateElection} electionFromValue={form}/> */}
+            <ElectionForm electionFormValue={selectedElection}></ElectionForm>
+
         </div>
+        
         
     )
 }
