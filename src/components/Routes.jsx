@@ -6,6 +6,7 @@ import {
   } from "react-router-dom";
 import HeadersTool from './HeadersTool';
 import FooterTool from './FooterTool';
+import ElectionTool from "./ElectionTool";
 
 const divStyle = {
     color: 'blue',
@@ -39,8 +40,7 @@ function Routes(props){
                     </Route>
                     <Route path="/ballot">/
                     </Route>
-                    <Route path="/election"/>
-                        
+                    <Route path="/election"><ElectionTool/></Route>
                     <Route path="/colorTool"/>/
                 </Switch>
             </div>
