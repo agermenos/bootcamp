@@ -8,7 +8,7 @@ function ElectionForm(props) {
     return(
         <div className="container">
             <label for="basic-url">{electionFormValue.description}</label>
-            {electionForm.description?
+            {electionFormValue.description?
                 <table className="table">
                     <thead>
                         <tr>
