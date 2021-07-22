@@ -3,6 +3,7 @@ function ElectionRow(props) {
     const callPeekRow = props.callEditRow;
     return (
         <tr key={election.id}>
+            <td>{election.id} </td>
             <td>{election.description}</td>
             <td>
                 <button onClick={() => callPeekRow(election)} >Peek</button>

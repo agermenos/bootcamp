@@ -1,9 +1,8 @@
 import HeadersTool from "./HeadersTool";
 import { useState, useEffect } from "react";
-import ElectionForm from './ElectionForm';
+import ElectionTable from './ElectionTable';
 import ElectionTableHeader from './ElectionTableHeader';
 import ElectionRow from "./ElectionRow";
-import NewElectionTable from './NewElectionTable';
 import axios from 'axios';
 
 function ElectionTool(props){
@@ -24,6 +23,7 @@ function ElectionTool(props){
 
     const callPeekRow = (election) => {
         console.log('Peeking Into Election ' + election.id);
+        setShowElectionForm(false);
         setSelectedElection(election);
     };
 
@@ -35,6 +35,10 @@ function ElectionTool(props){
     const electionRows=electionsData.map(election => {
         return <ElectionRow election={election} callEditRow={callPeekRow}/>
     });
+
+    const addQuestion = (question) => {
+        console.log ('Adding question: ' + question);
+    }
     
     return(
         <div>
@@ -48,10 +52,13 @@ function ElectionTool(props){
             </table>
             <button onClick={() => addElection()}>Add Election</button>
             {showElectionForm && 
-                <NewElectionTable></NewElectionTable>
+                <div>
+                    <ElectionTable isNew={showElectionForm} addElection={addElection}></ElectionTable>
+                </div>
             }
-            <ElectionForm electionFormValue={selectedElection}></ElectionForm>
-
+            {!showElectionForm && 
+                <ElectionTable isNew={showElectionForm} electionFormValue={selectedElection}></ElectionTable>
+            }    
         </div>
         
         

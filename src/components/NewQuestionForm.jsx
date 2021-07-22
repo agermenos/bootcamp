@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
 import QuestionFormItem from './QuestionFormItem';
 
-function NewElectionTable(props) {
+function NewQuestionForm(props) {
+    const {addQuestion} = props;
     return (
         <div className="container">
             <label for="basic-url">Election Form</label>
-            <QuestionFormItem id="txt-question" value="Question" propertyName="question" />
+            <QuestionFormItem id="txt-question" value="Question" addQuestion={addQuestion} propertyName="question" />
         </div>
     ) 
 }
 
-export default NewElectionTable;
+export default NewQuestionForm;
