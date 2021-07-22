@@ -6,7 +6,6 @@ import {
   Route,
 } from "react-router-dom";
 import Header from './components/Header';
-import Voter from './components/Voter'
 import Ballots from './components/Ballots';
 import ElectionTool from './components/ElectionTool';
 import RegTool from './components/RegTool';
