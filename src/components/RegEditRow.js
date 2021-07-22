@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function RegEditRow({ regRow  }) {
+export default function RegEditRow({ regRow, onSave  }) {
   let [regForm, setRegForm] = useState(regRow);
 
   function handleChange(e) {
@@ -11,7 +11,7 @@ export default function RegEditRow({ regRow  }) {
   }
 
   function save(regForm) {
-    //onSave(carForm);
+    onSave(regForm);
   }
 
   console.log(regForm);

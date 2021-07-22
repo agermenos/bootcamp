@@ -49,11 +49,25 @@ function RegTool () {
         console.log(regs.find(regObj => regObj.id === editId));
         setEditRegId(editId);
     }
+
+    function handleSave (regObj) {
+        console.log("RegTool.handleSave", regObj);
+        const requestOptions = {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(regObj),
+        }
+        fetch(`http://localhost:3001/regsData/${regObj.id}`, requestOptions)
+                .then(checkHttpStatus)
+                .then((res) => res.json())
+                .then(() => setError(""))
+                .catch((err) => setError(err.response.statusText))
+    }
    
     return (
         <div>
             <p>{error && `RegTool data initialization failed: ${error}`}</p>
-            <RegTable regs={regs} editRegId={editRegId}  onDelete={handleDelete} onEdit={handleEdit}/>
+            <RegTable regs={regs} editRegId={editRegId}  onDelete={handleDelete} onEdit={handleEdit} onSave={handleSave}/>
         </div>
     )
 }

@@ -1,10 +1,10 @@
 import RegViewRow from  './RegViewRow';
 import RegEditRow from  './RegEditRow';
 
-function RegTable ({regs, editRegId, onDelete, onEdit }) {
+function RegTable ({regs, editRegId, onDelete, onEdit, onSave }) {
     let regRows = regs.map((regRow) => 
     editRegId  === regRow.id ?  (
-        <RegEditRow key={regRow.id} regRow={regRow}/>
+        <RegEditRow key={regRow.id} regRow={regRow} onSave={onSave}/>
     )  :  (
         <RegViewRow key={regRow.id} regRow={regRow} onDelete={onDelete} onEdit={onEdit}/>
     ));
