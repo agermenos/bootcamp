@@ -11,7 +11,7 @@ function ElectionTool(props){
     const [electionsData, setElectionsData] = useState([]);
     const [selectedElection, setSelectedElection] = useState({});
     const [showElectionForm, setShowElectionForm] = useState(false);
-    const ELECTIONS_URL = "http://localhost:3010/electionsData";
+    const ELECTIONS_URL = "http://localhost:3001/electionsData";
 
     useEffect (
         () => 
