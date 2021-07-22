@@ -73,16 +73,28 @@
       "id": 1,
       "description": "tax election",
       "questions": [
-        { "description": "Proposition #1 - lower gasoline tax" },
-        { "description": "Proposition #2 - raise cigarette tax" }
+        { 
+	  "id": 1,
+	  "description": "Proposition #1 - lower gasoline tax" 
+        },
+        { 
+ 	  "id": 2,
+	  "description": "Proposition #2 - raise cigarette tax" 
+	}
       ]
     },
     {
       "id": 2,
       "description": "woking env",
       "questions": [
-        { "description": "wfh" },
-        { "description": "hybrid" }
+        { 
+	  "id": 1,
+	  "description": "wfh" 
+	},
+        { 
+	  "id": 2,
+	  "description": "hybrid" 
+	}
       ]
     }
   ],
