@@ -1,0 +1,103 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "carsData": [
+    {
+      "id": 2,
+      "make": "Lexus",
+      "model": "GX",
+      "year": 2020,
+      "color": "Black",
+      "price": 50000
+    }
+  ],
+  "regsData": [
+    {
+      "id": 1,
+      "fname": "Lynn",
+      "lname": "Luu",
+      "address": "9716 Wren Bluff",
+      "city": "San Diego",
+      "birthdate": "09/11",
+      "email": "lluu@gmail.com",
+      "phone": "858-307-1722"
+    },
+    {
+      "id": 2,
+      "fname": "Grace",
+      "lname": "Pham",
+      "address": "9716 Wren Bluff",
+      "city": "San Diego",
+      "birthdate": "05/09",
+      "email": "gpham@gmail.com",
+      "phone": "858-223-2334"
+    },
+    {
+      "id": 3,
+      "fname": "Kevin",
+      "lname": "Pham",
+      "address": "9716 Wren Bluff",
+      "city": "San Diego",
+      "birthdate": "10/08",
+      "email": "kpham@gmail.com",
+      "phone": "858-123-3456"
+    },
+    {
+      "fname": "Tuan",
+      "lname": "Nguyen",
+      "address": "1234 Kern St",
+      "city": "San Diego",
+      "birthdate": "11/16",
+      "email": "tnguyen@gmail.com",
+      "phone": "858.-123-3414",
+      "id": 4
+    }
+  ],
+  "electionsData" : [
+    {
+      "id": 1,
+      "description": "tax election",
+      "questions": [
+        { "description": "Proposition #1 - lower gasoline tax" },
+        { "description": "Proposition #2 - raise cigarette tax" }
+      ]
+    },
+    {
+      "id": 2,
+      "description": "woking env",
+      "questions": [
+        { "description": "wfh" },
+        { "description": "hybrid" }
+      ]
+    }
+  ],
+  "votesData": [
+    {
+      "voterId": 1,
+      "ballots": [
+        {
+          "electionID": 1,
+          "answers":  [
+            { "answer":  "Yes" },
+            { "answer": "No" }
+           ]
+        }
+       ]
+    }
+   ]
+}

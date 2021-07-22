@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
+## Setup to run
+Run json-server on port 3001
+json-server --watch  db.json --port 3001
+
 ## Available Scripts
 
 In the project directory, you can run:
