@@ -63,11 +63,19 @@ function RegTool () {
                 .then(() => setError(""))
                 .catch((err) => setError(err.response.statusText))
     }
+
+    function handleSort (sortKey) {
+      const sortedRegs = [...regs];
+      console.log("RegTool.handleSort", sortKey );
+      sortedRegs.sort((a, b) =>  a[sortKey].localeCompare(b[sortKey]));
+      console.log("RegTool.handleSort result", sortedRegs)
+      setRegs(sortedRegs);
+    }
    
     return (
         <div>
             <p>{error && `RegTool data initialization failed: ${error}`}</p>
-            <RegTable regs={regs} editRegId={editRegId}  onDelete={handleDelete} onEdit={handleEdit} onSave={handleSave}/>
+            <RegTable regs={regs} editRegId={editRegId}  onDelete={handleDelete} onEdit={handleEdit} onSave={handleSave} onSort={handleSort}/>
         </div>
     )
 }
