@@ -14,7 +14,8 @@ const Header = () => {
         <>
       <div className='header'>
         <HeaderLink page='home' />
-        <HeaderLink page='voter' />
+        <HeaderLink page='voters' />
+        <HeaderLink page='register' />
         <HeaderLink page='ballots' />
         <HeaderLink page='elections' />
       </div>
