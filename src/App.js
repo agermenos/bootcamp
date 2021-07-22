@@ -7,11 +7,11 @@ import {
   Redirect
 } from "react-router-dom";
 import Header from './components/Header';
-import Ballots from './components/Ballots';
 import ElectionTool from './components/ElectionTool';
 import RegTool from './components/RegTool';
 import Home from './components/Home';
-import Register from './components/Register';
+import Registration from './components/Registration';
+import VoteTool from './components/VoteTool';
 
 function App() {
   return (
@@ -24,8 +24,8 @@ function App() {
             </Route>
             <Route exact path='/home' component={Home} />
             <Route exact path='/voters' component={RegTool} />
-            <Route exact path='/register' component={Register} />
-            <Route exact path='/ballots' component={Ballots} />
+            <Route exact path='/register' component={Registration} />
+            <Route exact path='/vote' component={VoteTool} />
             <Route exact path='/elections' component={ElectionTool} />
             </Router>
     </div>
