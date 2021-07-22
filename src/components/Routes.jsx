@@ -4,7 +4,6 @@ import {
     Switch,
     Link
   } from "react-router-dom";
-import HeadersTool from './HeadersTool';
 import FooterTool from './FooterTool';
 import ElectionTool from "./ElectionTool";
 
@@ -17,7 +16,6 @@ const divStyle = {
 function Routes(props){
     return(
         <Router>
-            <HeadersTool text="Voting Project"/>
             <div className="container" style={divStyle}>
                 <nav>
                 <ul>
@@ -30,11 +28,9 @@ function Routes(props){
                     <li>
                     <Link to="/election">Election</Link>
                     </li>
-                    <li>
-                    <Link to="/admin">Admin</Link>
-                    </li>
                 </ul>
                 </nav>
+                <hr />
                 <Switch>
                     <Route path="/voter">/
                     </Route>
