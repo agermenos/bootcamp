@@ -1,4 +1,5 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function RegViewRow  ({regRow, onDelete, onEdit }) {
     function handleDelete ()
@@ -21,8 +22,8 @@ function RegViewRow  ({regRow, onDelete, onEdit }) {
             <td>{regRow.birthdate}</td>
             <td>{regRow.email}</td>
             <td>{regRow.phone}</td>
-            <td><button onClick={handleDelete}>Delete</button></td>
-            <td><button onClick={handleEdit}>Edit</button></td>
+            <td><button className="btn btn-primary" onClick={handleDelete}>Delete</button></td>
+            <td><button className="btn btn-primary" onClick={handleEdit}>Edit</button></td>
         </tr>
     )
 }

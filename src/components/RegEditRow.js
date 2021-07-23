@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function RegEditRow({ regRow, onSave  }) {
   let [regForm, setRegForm] = useState(regRow);
@@ -26,7 +27,7 @@ export default function RegEditRow({ regRow, onSave  }) {
         <td><input type="text" name="birthdate" value={regForm.birthdate} onChange={handleChange}/></td>
         <td><input type="text" name="email" value={regForm.email} onChange={handleChange}/></td>
         <td><input type="text" name="phone" value={regForm.phone} onChange={handleChange}/></td>
-        <td><button type="button" onClick={() => save(regForm)}>Save</button></td>
+        <td><button className="btn btn-primary" type="button" onClick={() => save(regForm)}>Save</button></td>
     </tr>
   );
 }

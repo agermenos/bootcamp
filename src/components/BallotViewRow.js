@@ -1,4 +1,5 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function BallotViewRow  ({ballotRow, onVote }) {
     function handleVote ()
@@ -12,7 +13,7 @@ function BallotViewRow  ({ballotRow, onVote }) {
         <tr>
             <td>{ballotRow.id}</td>
             <td>{ballotRow.description}</td>
-            <td><button onClick={handleVote}>Vote</button></td>
+            <td><button className="btn btn-primary" onClick={handleVote}>Vote</button></td>
         </tr>
     )
 }

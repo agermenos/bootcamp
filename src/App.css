@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  color: green;
 }
 
 .App-logo {
@@ -24,6 +25,10 @@
 
 .App-link {
   color: rgb(112, 76, 182);
+}
+
+td,th {
+  color: green;
 }
 
 @keyframes App-logo-float {
