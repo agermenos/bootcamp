@@ -6,7 +6,7 @@ function ElectionRow(props) {
             <td>{election.id} </td>
             <td>{election.description}</td>
             <td>
-                <button onClick={() => callPeekRow(election)} >Peek</button>
+                <button className="btn btn-info" onClick={() => callPeekRow(election)} >Peek</button>
             </td>
         </tr>
     )
