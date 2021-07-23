@@ -15,7 +15,7 @@ function RegTable ({regs, editRegId, onDelete, onEdit, onSave, onSort }) {
     }
 
     return  (
-        <table>
+        <table className="table">
                 <thead>
                     <tr>
                         <th>Id</th>
@@ -26,6 +26,8 @@ function RegTable ({regs, editRegId, onDelete, onEdit, onSave, onSort }) {
                         <th>Birthdate</th>
                         <th>Email</th>
                         <th>Phone</th>
+                        <th>Actions</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>

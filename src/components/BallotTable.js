@@ -12,11 +12,12 @@ function BallotTable ({ballots}) {
     return  (
         <div>
         <h1>Ballots to vote on: </h1>
-        <table>
+        <table className="table">
                 <thead>
                     <tr>
                         <th>Ballot Id</th>
                         <th>Ballot Description</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
