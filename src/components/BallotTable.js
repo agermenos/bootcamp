@@ -7,11 +7,12 @@ function BallotTable ({ballots, onVote}) {
     return  (
         <div>
         <h1>Choose an Election to vote on: </h1>
-        <table>
+        <table className="table">
                 <thead>
                     <tr>
                         <th>Election Id</th>
                         <th>Election Description</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
