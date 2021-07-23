@@ -1,5 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function RegForm ({onSave})
 {
@@ -38,7 +40,7 @@ function RegForm ({onSave})
           <label>Birthdate:</label><input type="text" name="birthdate" value={regForm.birthdate} onChange={handleChange}/><br />
           <label>Email:</label><input type="text" name="email" value={regForm.email} onChange={handleChange}/><br />
           <label>Phone:</label><input type="text" name="phone" value={regForm.phone} onChange={handleChange}/><br /><br />
-          <button onClick={handleAdd}>Complete Registration</button>
+          <button className="btn btn-primary" onClick={handleAdd}>Complete Registration</button>
     </div>
   )
 }
