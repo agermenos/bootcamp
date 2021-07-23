@@ -36,8 +36,14 @@ function ElectionTool(props){
         return <ElectionRow election={election} callEditRow={callPeekRow}/>
     });
 
-    const addQuestion = (question) => {
-        console.log ('Adding question: ' + question);
+    const voteElection=(electionForm) => {
+        axios
+            .post(ELECTIONS_URL, {...electionForm})
+            .then((res)=>{
+                const newElectionsData = [ ...electionForm, res.data];
+                setElectionsData(newElectionsData);
+            })
+            .catch((err) => setError(err))
     }
     
     return(
@@ -53,11 +59,11 @@ function ElectionTool(props){
             <button onClick={() => addElection()}>Add Election</button>
             {showElectionForm && 
                 <div>
-                    <ElectionTable isNew={showElectionForm} electionFormValue={selectedElection} addElection={addElection}></ElectionTable>
+                    <ElectionTable isNew={showElectionForm} electionFormValue={selectedElection} storeElection={voteElection} addElection={addElection}></ElectionTable>
                 </div>
             }
             {!showElectionForm && 
-                <ElectionTable isNew={showElectionForm} electionFormValue={selectedElection}></ElectionTable>
+                <ElectionTable isNew={showElectionForm} storeElection={voteElection} electionFormValue={selectedElection}></ElectionTable>
             }    
         </div>
         

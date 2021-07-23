@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {useState} from 'react';
 
 function QuestionFormItem(props) {
-    const addQuestion = props.addQuestion;
+    const {addQuestion, text} = props;
     const [fieldText, setFieldText] = useState(props.content);    
     const updateText = (e) => {
         setFieldText(e.target.value);
@@ -19,7 +19,7 @@ function QuestionFormItem(props) {
                 id={props.id} 
                 aria-describedby="basic-addon3" 
                 value={fieldText}/>
-            <button onClick={() => addQuestion(fieldText)}>Add Question</button>
+            <button onClick={() => addQuestion(fieldText)}>{text}</button>
         </div>
     )
 }

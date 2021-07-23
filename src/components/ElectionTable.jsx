@@ -1,9 +1,10 @@
 import {useState, useEffect} from 'react';
 import QuestionRow from './QuestionRow';
 import NewQuestionForm from './NewQuestionForm';
+import QuestionFormItem from './QuestionFormItem';
 
 function ElectionTable(props) {
-    const {isNew, electionFormValue} = props;
+    const {storeElection, isNew, electionFormValue} = props;
     const [electionForm, setElectionForm] = useState({});
 
     useEffect (
@@ -25,7 +26,7 @@ function ElectionTable(props) {
     const addQuestion = (question) => {
         const myElectionForm = electionForm?{
             id: electionForm.id || null,
-            descripion: electionForm.description || "test",
+            description: electionForm.description || "test",
             questions: [...electionForm.questions] || []
         }:{
             description:"test",
@@ -39,6 +40,16 @@ function ElectionTable(props) {
             description: myElectionForm.description + "",
             questions: [...myElectionForm.questions]
         });
+    }
+
+    const saveElection = (name) => {
+        
+        const returnForm = {
+            id: electionForm.id || null,
+            description: name || "new Election",
+            question: [...electionForm.questions]
+        }
+        storeElection(returnForm);
     }
     
     return(
@@ -68,10 +79,13 @@ function ElectionTable(props) {
                     
                 </div>
             :<null/>}
-            {isNew && 
-                <NewQuestionForm addQuestion={addQuestion}/>
-                
+            {isNew &&
+                <div className="container"> 
+                    <NewQuestionForm addQuestion={addQuestion}/>
+                    <QuestionFormItem id="txt-question" value="Election Name" content="" addQuestion={saveElection} propertyName="electionName"/>
+                </div>
             }
+
         </div>
     );
 }
