@@ -53,7 +53,7 @@ function ElectionTool(props){
             <button onClick={() => addElection()}>Add Election</button>
             {showElectionForm && 
                 <div>
-                    <ElectionTable isNew={showElectionForm} addElection={addElection}></ElectionTable>
+                    <ElectionTable isNew={showElectionForm} electionFormValue={selectedElection} addElection={addElection}></ElectionTable>
                 </div>
             }
             {!showElectionForm && 

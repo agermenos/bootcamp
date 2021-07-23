@@ -4,20 +4,40 @@ import NewQuestionForm from './NewQuestionForm';
 
 function ElectionTable(props) {
     const {isNew, electionFormValue} = props;
-    const [electionForm, setElectionForm] = useState(electionFormValue);
+    const [electionForm, setElectionForm] = useState({});
+
+    useEffect (
+        () => {
+            !isNew && electionFormValue?
+            setElectionForm({
+                id: electionFormValue.id + 0,
+                description: electionFormValue.description + "",
+                questions: electionFormValue.questions?[...electionFormValue.questions]:[]
+            }):
+            setElectionForm({
+                    id: null,
+                    description: null,
+                    questions: []
+            })
+        }, [electionFormValue, isNew]
+    )
 
     const addQuestion = (question) => {
         const myElectionForm = electionForm?{
             id: electionForm.id || null,
-            descripion: electionForm.descripion || "test",
-            questions: electionForm.questions || []
+            descripion: electionForm.description || "test",
+            questions: [...electionForm.questions] || []
         }:{
             description:"test",
             questions:[]
         };
-        myElectionForm.questions.push(question);
+        myElectionForm.questions.push(
+            {   id: myElectionForm.questions.length + 1,
+                description: question});
         setElectionForm({
-            ...myElectionForm
+            id: myElectionForm.id + 0,
+            description: myElectionForm.description + "",
+            questions: [...myElectionForm.questions]
         });
     }
     
@@ -26,10 +46,10 @@ function ElectionTable(props) {
             
             {electionForm && electionForm.description?
                 <div>
-                    {electionForm.description?
+                    {/* {electionForm.description?
                         <label for="basic-url">{electionForm.description}</label>:
                         <NewQuestionForm></NewQuestionForm>
-                    }
+                    } */}
                     <table className="table">
                         <thead>
                             <tr>
@@ -50,6 +70,7 @@ function ElectionTable(props) {
             :<null/>}
             {isNew && 
                 <NewQuestionForm addQuestion={addQuestion}/>
+                
             }
         </div>
     );
