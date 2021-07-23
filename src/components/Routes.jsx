@@ -20,13 +20,16 @@ function Routes(props){
                 <nav>
                 <ul>
                     <li>
-                    <Link to="/voter">Voters</Link>
+                    <Link to="/voters">Voters</Link>
                     </li>
                     <li>
                     <Link to="/ballot">Ballot</Link>
                     </li>
                     <li>
                     <Link to="/election">Election</Link>
+                    </li>
+                    <li>
+                    <Link to="/vote">Vote</Link>
                     </li>
                 </ul>
                 </nav>
@@ -37,6 +40,7 @@ function Routes(props){
                     <Route path="/ballot">/
                     </Route>
                     <Route path="/election"><ElectionTool/></Route>
+                    <Route path="/vote"></Route>
                     <Route path="/colorTool"/>/
                 </Switch>
             </div>

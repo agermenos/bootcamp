@@ -1,22 +1,17 @@
 import BallotViewRow from  './BallotViewRow';
 
-function BallotTable ({ballots}) {
+function BallotTable ({ballots, onVote}) {
     let ballotRows = ballots.map((ballotRow) => 
-        <BallotViewRow key={ballotRow.id} ballotRow={ballotRow} />)
-
-    // function handleSort (e, sortKey) {
-    //     console.log("RegTable.handleSort", sortKey)
-    //     onSort(sortKey);
-    // }
+        <BallotViewRow key={ballotRow.id} ballotRow={ballotRow} onVote={onVote} />)
 
     return  (
         <div>
-        <h1>Ballots to vote on: </h1>
+        <h1>Choose an Election to vote on: </h1>
         <table>
                 <thead>
                     <tr>
-                        <th>Ballot Id</th>
-                        <th>Ballot Description</th>
+                        <th>Election Id</th>
+                        <th>Election Description</th>
                     </tr>
                 </thead>
                 <tbody>

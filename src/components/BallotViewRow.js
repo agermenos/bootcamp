@@ -1,10 +1,11 @@
 import React from 'react';
 
-function BallotViewRow  ({ballotRow }) {
+function BallotViewRow  ({ballotRow, onVote }) {
     function handleVote ()
     {
-        console.log("handleVote")
-        //onVote(ballotRow.id);
+        console.log("handleVote", ballotRow.description)
+        // use withRouter() of react-router-dome to route to new component?
+        onVote(ballotRow.id, ballotRow);
     }
   
     return  (
