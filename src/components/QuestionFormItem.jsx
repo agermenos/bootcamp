@@ -19,7 +19,7 @@ function QuestionFormItem(props) {
                 id={props.id} 
                 aria-describedby="basic-addon3" 
                 value={fieldText}/>
-            <button onClick={() => addQuestion(fieldText)}>{text}</button>
+            <button className="btn btn-secondary" onClick={() => addQuestion(fieldText)}>{text}</button>
         </div>
     )
 }

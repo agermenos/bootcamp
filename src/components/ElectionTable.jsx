@@ -57,10 +57,6 @@ function ElectionTable(props) {
             
             {electionForm && electionForm.description?
                 <div>
-                    {/* {electionForm.description?
-                        <label for="basic-url">{electionForm.description}</label>:
-                        <NewQuestionForm></NewQuestionForm>
-                    } */}
                     <table className="table">
                         <thead>
                             <tr>
@@ -82,7 +78,7 @@ function ElectionTable(props) {
             {isNew &&
                 <div className="container"> 
                     <NewQuestionForm addQuestion={addQuestion}/>
-                    <QuestionFormItem id="txt-question" value="Election Name" content="" addQuestion={saveElection} propertyName="electionName"/>
+                    <QuestionFormItem id="txt-question" value="Election Name" content="" text="Save Election" addQuestion={saveElection} propertyName="electionName"/>
                 </div>
             }
 

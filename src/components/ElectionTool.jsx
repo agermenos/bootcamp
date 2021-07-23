@@ -56,7 +56,7 @@ function ElectionTool(props){
                     {electionRows}
                 </tbody>
             </table>
-            <button onClick={() => addElection()}>Add Election</button>
+            <button className="btn btn-primary" onClick={() => addElection()}>Add Election</button>
             {showElectionForm && 
                 <div>
                     <ElectionTable isNew={showElectionForm} electionFormValue={selectedElection} storeElection={voteElection} addElection={addElection}></ElectionTable>
