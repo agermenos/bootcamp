@@ -1,9 +1,9 @@
 import React from 'react';
 import QuestionViewRow  from './QuestionViewRow'
 
-function BallotForm  ({ballot}) {
+function BallotForm  (ballot) {
     console.log("BallotForm: ballot is ", ballot)
-    let questionRows = ballot.map((questionRow) => 
+    let questionRows = ballot.selectedBallot.map((questionRow) => 
         <QuestionViewRow key={questionRow.id} questionRow={questionRow}/>)
 
     return  (

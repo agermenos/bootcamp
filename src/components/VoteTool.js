@@ -60,8 +60,7 @@ function VoteTool  () {
     function onVote(ballotId, ballot) {
       console.log("VoteTool.onVote", ballotId, ballot.questions)
       setShowBallot(true)
-      let data = ballot.quesstions
-      setSelectedBalot(data)
+      setSelectedBalot(ballot.questions)
     }
 
     return  (
