@@ -47,7 +47,7 @@ function ElectionTable(props) {
         const returnForm = {
             id: electionForm.id || null,
             description: name || "new Election",
-            question: [...electionForm.questions]
+            questions: [...electionForm.questions]
         }
         storeElection(returnForm);
     }

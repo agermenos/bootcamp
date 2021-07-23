@@ -33,14 +33,14 @@ function ElectionTool(props){
     };
 
     const electionRows=electionsData.map(election => {
-        return <ElectionRow election={election} callEditRow={callPeekRow}/>
+        return <ElectionRow election={election} callEditRow={() => callPeekRow (election)}/>
     });
 
     const voteElection=(electionForm) => {
         axios
             .post(ELECTIONS_URL, {...electionForm})
             .then((res)=>{
-                const newElectionsData = [ ...electionForm, res.data];
+                const newElectionsData = [ ...electionsData, res.data];
                 setElectionsData(newElectionsData);
             })
             .catch((err) => setError(err))
